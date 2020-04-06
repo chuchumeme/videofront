@@ -12,7 +12,51 @@
                 </div>
             </CarouselItem>
           </Carousel>
-          <div></div>
+          <Menu mode="horizontal" :theme="theme1" active-name="1">
+            <MenuItem name="1">
+                <Icon type="ios-paper" />
+                首页
+            </MenuItem>
+            <MenuItem name="2">
+                <Icon type="ios-paper" />
+                智力早起发
+            </MenuItem>
+            <MenuItem name="2">
+                <Icon type="ios-paper" />
+                安全早预防
+            </MenuItem>
+            <MenuItem name="4">
+                <Icon type="ios-paper" />
+                兴趣早发现
+            </MenuItem>
+            <MenuItem name="5">
+                <Icon type="ios-paper" />
+                礼仪文化
+            </MenuItem>
+            <MenuItem name="6">
+                <Icon type="ios-paper" />
+                家长小帮手
+            </MenuItem>
+          </Menu>
+          <div class="first">
+            <div class="firstTop">
+              <div class="topLeft">今日推荐</div>
+              <div class="topRight">精彩不容错过</div>
+            </div>
+            <div class="intro">
+              <div v-for="item in beatifulList" class="beatiful">
+                <div class="videoImg">
+                  <img class="imgUrl" :src="item.imgurl" alt="">
+                </div>
+                <div class="videoName">
+                  {{item.videoname}}
+                </div>
+                <div class="videoIntro">
+                  {{item.videoIntro}}
+                </div>
+              </div>
+            </div>
+          </div>
         </Content>
         <Footer>Footer</Footer>
     </Layout>
@@ -39,5 +83,21 @@ export default {
 .banner{
   width: 100%;
   height: 500px;
+}
+.firstTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12px;
+}
+.topLeft {
+  font-size:26px;
+  color: #333;
+  margin-left: 12px;
+}
+.topRight {
+  font-size: 16px;
+  color: #666;
+  margin-left: 12px;
 }
 </style>
